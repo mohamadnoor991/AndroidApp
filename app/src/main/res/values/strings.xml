@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Faircorp</string>
+    <string name="app_logo_description">Faircorp logo</string>
+
+    <string name="act_main_Windwoname_hint">Windwo name</string>
+    <string name="act_main_welcome">Welcome on faircorp,\n the app to manage building windows</string>
+    <string name="act_main_open_window">Open window</string>
+    <string name="welcome_to_faircrop_system">Welcome to FairCrop System</string>
+    <string name="window_name">Window name</string>
+    <string name="empty">empty</string>
+</resources>
