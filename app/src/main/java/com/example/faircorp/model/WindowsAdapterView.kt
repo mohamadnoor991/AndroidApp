@@ -7,12 +7,13 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.faircorp.R
 
-class WindowAdapter : RecyclerView.Adapter<WindowAdapter.WindowViewHolder>() { // (1)
+class WindowAdapter(val listener: OnWindowSelectedListener): RecyclerView.Adapter<WindowAdapter.WindowViewHolder>() { // (1)
 
     inner class WindowViewHolder(view: View) : RecyclerView.ViewHolder(view) { // (2)
         val name: TextView = view.findViewById(R.id.txt_window_name)
         val room: TextView = view.findViewById(R.id.txt_window_room)
         val status: TextView = view.findViewById(R.id.txt_status)
+
     }
 
     private val items = mutableListOf<WindowDto>() // (3)
@@ -31,12 +32,30 @@ class WindowAdapter : RecyclerView.Adapter<WindowAdapter.WindowViewHolder>() { /
         return WindowViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: WindowViewHolder, position: Int) {  // (7)
+    override fun onBindViewHolder(holder: WindowViewHolder, position: Int) {
         val window = items[position]
         holder.apply {
             name.text = window.name
             status.text = window.status.toString()
             room.text = window.room.name
+            itemView.setOnClickListener { listener.onWindowSelected(window.id) } // (1)
         }
     }
+
+    override fun onViewRecycled(holder: WindowViewHolder) { // (2)
+        super.onViewRecycled(holder)
+        holder.apply {
+            itemView.setOnClickListener(null)
+        }
+
+    }
+
+//    override fun onBindViewHolder(holder: WindowViewHolder, position: Int) {  // (7)
+//        val window = items[position]
+//        holder.apply {
+//            name.text = window.name
+//            status.text = window.status.toString()
+//            room.text = window.room.name
+//        }
+//    }
 }

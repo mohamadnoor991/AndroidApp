@@ -8,4 +8,14 @@
     <string name="welcome_to_faircrop_system">Welcome to FairCrop System</string>
     <string name="window_name">Window name</string>
     <string name="empty">empty</string>
+    <string name="txt_window_name">TextView</string>
+    <string name="textview">TextView</string>
+<!--    <string name="textview">TextView</string>-->
+<!--    <string name="textview">TextView</string>-->
+<!--    <string name="textview">TextView</string>-->
+    <string name="act_window_name">Window name</string>
+    <string name="act_window_room">Room_Name</string>
+    <string name="act_window_room_target_temp">Target room temperature</string>
+    <string name="act_window_room_current_temp">Current room temperature</string>
+    <string name="act_window_status">Status</string>
 </resources>
